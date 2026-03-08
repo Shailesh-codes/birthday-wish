@@ -1,0 +1,70 @@
+@keyframes float {
+    0% {
+      transform: translateY(100vh) rotate(0deg);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-100vh) rotate(360deg);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes sparkle {
+    0% {
+      transform: translateY(100vh) translateX(-100px) scale(0);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(50vh) translateX(100px) scale(1);
+    }
+    100% {
+      transform: translateY(0) translateX(-100px) scale(0);
+      opacity: 0;
+    }
+  }
+  
+  .animate-float {
+    animation: float 15s linear infinite;
+  }
+  
+  .animate-sparkle {
+    animation: sparkle 4s ease-in-out infinite;
+    font-size: 24px;
+  }
+  
+  /* Add shimmer effect to the image border */
+  .border-white {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .border-white::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgba(255, 255, 255, 0.3),
+      transparent
+    );
+    transform: rotate(45deg);
+    animation: shimmer 3s infinite;
+  }
+  
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%) rotate(45deg);
+    }
+    100% {
+      transform: translateX(100%) rotate(45deg);
+    }
+  }
+  
